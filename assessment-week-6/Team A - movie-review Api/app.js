@@ -15,7 +15,7 @@ app.use(logger)
 
 //Routes
 app.use('/api/movies', movieRoutes);
-app.use('/api/movies/:movieId/review', reviewRoutes);
+app.use('/api/review', reviewRoutes);
 
 //Middleware: errorHandler
 app.use(errorHandlers);

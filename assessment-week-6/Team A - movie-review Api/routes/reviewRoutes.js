@@ -5,9 +5,9 @@ const router = express.Router({mergepParams: true});
 
 const { getReviewsByMovie, getReviewById, createReview, deleteReview } = require("../controllers/reviewController")
 
-router.route("/")
-.get(getReviewsByMovie)
-.post(createReview);
+router.get('/:movieId')
+router.post = require('../middleware/validateReview')
+router.get('/', validateReview, createReview)
 
 router.route("/:reviewId")
 .get(getReviewById)
