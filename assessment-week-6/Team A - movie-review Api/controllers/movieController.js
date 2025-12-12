@@ -93,7 +93,6 @@ exports.getMovieStats = (req, res) => {
     const averageStars = numberOfReviews > 0 ? movieReviews.reduce((acc, curr) => acc + curr.stars, 0) / numberOfReviews : 0;
     res.status(200).json({ movieId, numberOfReviews, averageStars: averageStars.toFixed(2) });
 }
-
 exports.createMovie = (req, res) => {
     const newMovie = {
         id: generateId(results),
